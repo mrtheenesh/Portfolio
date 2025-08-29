@@ -1,17 +1,5 @@
 import { motion } from "framer-motion";
 
-//   const logos = [
-//     "reactjs.svg",
-//     "tailwind.svg",
-//     "django.svg",
-//     "vite.svg",
-//     "python.svg",
-//     "html.svg",
-//     "css.svg",
-//     "postgresql.svg",
-//     "Sql.svg",
-//   ];
-
 export default function Hero() {
   return (
     <section
@@ -28,19 +16,6 @@ export default function Hero() {
       >
         🚀 Ready to Innovate
       </motion.div>
-
-      {/* Big Gradient Title */}
-      <motion.h1
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.4, duration: 0.7 }}
-        className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight "
-      >
-        Hi, I’m{" "}
-        <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg">
-          Theenesh M.R
-        </span>
-      </motion.h1>
 
       {/* Subtitle */}
       <motion.p
