@@ -39,8 +39,8 @@ const projects = [
     img: "/techstack/rest_api.svg" 
   },
   { 
-    title: "Game Scraper", 
-    desc: "Web scraping & automation", 
+    title: "Web scraping & automation", 
+    desc: "Scraping game data", 
     img: "/techstack/selenium.svg" 
   },
   { 
