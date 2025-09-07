@@ -4,6 +4,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 // ================== Tech Stack Data ==================
 const techStack = [
   { name: "HTML", img: "/techstack/html.svg" },
@@ -22,14 +23,37 @@ const techStack = [
 
 // ================== Projects Data ==================
 const projects = [
-  { title: "E-commerce Website", desc: "Built with Django + React", img: "/techstack/javascript.svg" },
-  { title: "Chatbot App", desc: "Flask + OpenAI API", img: "/techstack/javascript.svg" },
-  { title: "Portfolio Website", desc: "React + Tailwind + Vite", img: "/techstack/javascript.svg" },
-  { title: "Portfolio Website", desc: "React + Tailwind + Vite", img: "/techstack/javascript.svg" },
-  { title: "Portfolio Website", desc: "React + Tailwind + Vite", img: "/techstack/javascript.svg" },
-  { title: "Portfolio Website", desc: "React + Tailwind + Vite", img: "/techstack/javascript.svg" },
+  { 
+    title: "E-Commerce Website", 
+    desc: "Full-stack Django project", 
+    img: "/techstack/django_logo.svg" 
+  },
+  { 
+    title: "Portfolio Website", 
+    desc: "Personal React portfolio", 
+    img: "/techstack/portfolio.svg" 
+  },
+  { 
+    title: "REST API", 
+    desc: "Full Stack Connection",  
+    img: "/techstack/rest_api.svg" 
+  },
+  { 
+    title: "Game Scraper", 
+    desc: "Web scraping & automation", 
+    img: "/techstack/selenium.svg" 
+  },
+  { 
+    title: "Keyboard Automation", 
+    desc: "Browser Key Automation",  
+    img: "/techstack/python.svg" 
+  },
+  { 
+    title: "AI Chatbot", 
+    desc: "Local chatbot with FAISS", 
+    img: "/techstack/AI_chatbot.svg" 
+  }
 ];
-
 // ========================================================================
 
 export default function Showcase() {
@@ -80,13 +104,12 @@ export default function Showcase() {
             key={index}
             data-aos="fade-up"
             data-aos-delay={index * 100}
-            className="relative group"
-          >
+            className="relative group">
             {/* Neon Glow - shows only on hover */}
             <div
               className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-200 via-pink-300 to-blue-500
-                        opacity-0 group-hover:opacity-30 blur-xl transition duration-500"
-            ></div>
+                        opacity-0 group-hover:opacity-30 blur-xl transition duration-500">
+            </div>
 
             {/* Card */}
             <div
@@ -94,20 +117,17 @@ export default function Showcase() {
                         flex flex-col items-center justify-center gap-3
                         shadow-lg cursor-pointer
                         transition-transform duration-300 ease-out
-                        hover:scale-110"
-            >
+                        hover:scale-110">
               <img
                 src={tech.img}
                 alt={tech.name}
-                className="w-16 h-16 object-contain mb-3"
-              />
+                className="w-16 h-16 object-contain mb-3"/>
               <p className="text-sm font-medium">{tech.name}</p>
             </div>
           </div>
-
-            ))}
-          </div>
-        </Tabs.Content>
+        ))}
+      </div>
+    </Tabs.Content>
 
         {/* ====== Projects Content ====== */}
         <Tabs.Content value="projects">
@@ -126,29 +146,26 @@ export default function Showcase() {
             ></div>
 
             {/* Card */}
-            <div
-              className="relative p-4 w-50 h-50 rounded-xl 
-                        bg-slate-800/50 hover:bg-slate-700/50 
-                        transition-transform duration-300 ease-in-out 
-                        flex flex-col items-center justify-center gap-2 
-                        hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl"
-            >
-              <img
-                src={project.img}
-                alt={project.title}
-                className="rounded-lg mb-4 h-20 object-cover"
-              />
-              <h3 className="text-lg font-semibold">{project.title}</h3>
-              <p className="text-gray-300 text-sm">{project.desc}</p>
-            </div>
+              <div
+                className="relative p-4 rounded-xl 
+                          bg-slate-800/50 hover:bg-slate-700/50 
+                          transition-transform duration-300 ease-in-out 
+                          flex flex-col items-center gap-2 
+                          hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl h-full"
+              >
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="rounded-lg mb-4 h-20 object-cover"
+                />
+                <h3 className="text-lg font-semibold">{project.title}</h3>
+                <p className="text-gray-300 text-sm text-center flex-grow">{project.desc}</p>
+              </div>
           </div>
-
-            ))}
-          </div>
-        </Tabs.Content>
-      </Tabs.Root>
-    </section>
-
-    
+        ))}
+      </div>
+    </Tabs.Content>
+  </Tabs.Root>
+</section>
   );
 }

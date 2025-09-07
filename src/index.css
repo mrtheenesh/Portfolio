@@ -6,7 +6,6 @@ html,
 html,
 body {
   overflow-x: hidden;
-  /* background: #030014; dark background */
   scroll-behavior: smooth !important;
 }
 
@@ -19,4 +18,3 @@ body {
 .animation-delay-4000 {
   animation-delay: 4s;
 }
-

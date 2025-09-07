@@ -1,94 +1,101 @@
-import { motion } from "framer-motion";
+"use client";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function About() {
+  useEffect(() => {
+    AOS.init({
+      duration: 600,  // speed of animation
+      once: false,    // allow replay when scrolling down again
+      mirror: false,  // 👈 important: no animation on scroll up
+    });
+  }, []);
+
   return (
     <section
       id="about"
-      className="relative min-h-screen flex flex-col justify-center items-center px-6 py-16 via-gray-950 to-gray-900 text-white"
+      className="relative min-h-screen flex flex-col justify-center items-center px-6 py-16 text-white"
     >
       {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+      <h2
+        data-aos="fade-up"
         className="text-3xl md:text-4xl font-bold mb-4 text-center"
       >
         About Me
-      </motion.h2>
+      </h2>
 
       {/* Tagline */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
+      <p
+        data-aos="fade-up"
+        data-aos-delay="150"
         className="text-lg text-purple-300 mb-12 text-center"
       >
-        ✨ Transforming ideas into digital experiences ✨
-      </motion.p>
+        🚀 Crafting solutions through code, data, and innovation 🚀
+      </p>
 
       {/* 2-column layout */}
       <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl w-full">
         {/* Left content */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="space-y-6"
-        >
+        <div className="space-y-6" data-aos="fade-up" data-aos-delay="250">
           <h3 className="text-4xl font-bold">
-            Hello, I&apos;m{" "}
+            Hi, I&apos;m{" "}
             <span className="text-purple-400">Theenesh M.R</span>
           </h3>
+
           <p className="text-gray-300 leading-relaxed">
-            I’m a passionate{" "}
+            I’m a{" "}
             <span className="font-semibold text-blue-400">
-              Full-Stack Developer
+              B.Sc. Computer Science graduate (2022–2025)
             </span>{" "}
-            💻 with experience in{" "}
+            seeking an entry-level role in IT as a Full Stack Developer. Skilled
+            in{" "}
             <span className="italic">
-              Python, Java, Web Technology, AI, IoT, Data Science
+              Python, Django, HTML, CSS, JavaScript, React, and Vite
             </span>
-            , and modern cloud solutions.
+            , with hands-on experience through academic and self-learning
+            projects.
           </p>
-          <p className="text-gray-400 leading-relaxed">
-            I love solving real-world problems and building scalable apps 🚀.
-            My projects include an e-commerce platform, chatbots, automation
-            tools, and cloud deployments.
+
+          <p className="text-gray-300 leading-relaxed">
+            Eager to grow in a professional environment and apply my problem
+            solving and teamwork skills to support the team and deliver results.
           </p>
 
           {/* Buttons */}
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 pt-4" data-aos="fade-up" data-aos-delay="350">
             <a
-              href="#"
-              className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition"
-            >
-              📄 Download CV
-            </a>
-            <a
-              href="#portfolio"
+              href="Theenesh_Resume.pdf"
+              download="Theenesh_Resume.pdf"
               className="px-6 py-3 border border-purple-400 text-purple-400 hover:bg-purple-600/20 rounded-lg font-medium transition"
             >
-              🔗 View Projects
+              📄 Download Resume
+            </a>
+            <a
+              href="#skills"
+              className="px-6 py-3 border border-purple-400 text-purple-400 hover:bg-purple-600/20 rounded-lg font-medium transition"
+            >
+              🔗 View Skills
             </a>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Right profile image with glow */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
+        {/* Right profile image */}
+        <div
           className="flex justify-center"
+          data-aos="fade-up"
+          data-aos-delay="400"
         >
-          <div className="relative">
-            <div className="absolute inset-0 bg-purple-500 blur-3xl opacity-40"></div>
+          <div className="relative transform -translate-y-4 translate-x-4 group">
+            <div className="absolute inset-0 bg-purple-500 blur-3xl opacity-20 group-hover:bg-white group-hover:opacity-20 transition duration-500 pointer-events-none"></div>
+
             <img
-              src="/techstack/profile.jpg" // 🔹 replace with your image path
-              alt=""
-              className="relative w-64 h-64 object-cover border-4 border-gray-800 shadow-xl rounded-2xl"
+              src="/techstack/profile.jpg"
+              alt="Profile Picture"
+              className="relative w-64 h-64 object-cover border-3 border-gray-800 shadow-xl rounded-2xl group-hover:shadow-[0_0_40px_rgba(255,255,255,0.8)] transition duration-500 group-hover:-translate-y-1"
             />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

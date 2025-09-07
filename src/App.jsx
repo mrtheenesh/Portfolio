@@ -23,7 +23,6 @@ return (
       <Bg />
       </div>
       <section className="relative z-10 text-white">
-
       <Navbar />
       <Hero />
       <About />

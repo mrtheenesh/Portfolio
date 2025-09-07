@@ -44,6 +44,7 @@ export default function Skills() {
       </h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl w-full">
+
         {skills.map((skill, index) => (
           <div
             key={skill.name}
@@ -53,12 +54,12 @@ export default function Skills() {
           >
             {/* Neon Glow - only visible on hover */}
             <div
-              className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 via-pink-500 to-purple-600
+              className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400
                         opacity-0 group-hover:opacity-40 blur-xl transition duration-500"
             ></div>
 
             {/* Card Content */}
-            <div className="relative p-6 bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition">
+            <div className="relative p-6 bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-md transition transform hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-800/50">
               <div className="flex items-center space-x-3 mb-4 text-blue-600 dark:text-blue-400">
                 {skill.icon}
                 <h3 className="text-lg font-semibold">{skill.name}</h3>

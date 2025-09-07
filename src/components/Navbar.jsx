@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import ThemeToggle from "../xtra/ThemeToggle";
 import { motion } from "framer-motion";
 
 const navLinks = [
@@ -27,7 +26,10 @@ export default function Navbar() {
           }
         });
       },
-      { threshold: 0.6 }
+      {
+        threshold: 0.3, // ✅ trigger earlier (30% visible instead of 60%)
+        rootMargin: "-100px 0px -40% 0px", // ✅ adjust viewport calculation
+      }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -72,7 +74,6 @@ export default function Navbar() {
               transition={{ delay: 0.2 + i * 0.1 }}
               className="relative group"
             >
-              {/* No href → prevents # in URL */}
               <button
                 onClick={() => handleScroll(link.id)}
                 className={`transition ${
@@ -93,9 +94,6 @@ export default function Navbar() {
               ></span>
             </motion.li>
           ))}
-
-          <li><ThemeToggle /></li>
-
         </ul>
       </div>
     </motion.nav>
