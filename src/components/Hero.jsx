@@ -50,7 +50,7 @@ export default function Home() {
         transition={{ delay: 0.8, duration: 0.7 }}
         className="mt-6 flex flex-wrap gap-3"
       >
-        {["Python", "Django", "SQL", "React", "Vite"].map((skill, i) => (
+        {["Python", "Django", "SQL", "React", "javascript"].map((skill, i) => (
           <span
             key={i}
             className="px-4 py-1.5 text-sm rounded-lg bg-white/5 border border-gray-600/30 
