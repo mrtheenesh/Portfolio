@@ -12,7 +12,7 @@ const navLinks = [
 export default function Navbar() {
   const [active, setActive] = useState("home");
 
-  // 🔥 Scroll Spy (tracks which section is visible)
+  // Scroll Spy (tracks which section is visible)
   useEffect(() => {
     const sections = navLinks
       .map((link) => document.getElementById(link.id))
@@ -27,8 +27,8 @@ export default function Navbar() {
         });
       },
       {
-        threshold: 0.3, // ✅ trigger earlier (30% visible instead of 60%)
-        rootMargin: "-100px 0px -40% 0px", // ✅ adjust viewport calculation
+        threshold: 0.3, // trigger earlier (30% visible instead of 60%)
+        rootMargin: "-100px 0px -40% 0px", // adjust viewport calculation
       }
     );
 
@@ -61,7 +61,7 @@ export default function Navbar() {
           transition={{ delay: 0.3, duration: 0.7 }}
           className="text-xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
         >
-          Theenesh M.R
+          Theenesh M.R | @mrtheenesh07@gmail.com
         </motion.h1>
 
         {/* Right side - Nav Links */}
