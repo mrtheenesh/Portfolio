@@ -8,11 +8,6 @@ body {
   scroll-behavior: smooth !important;
 }
 
-/* Fix cutoff when scrolling to anchors (like #about, #skills) */
-section {
-  scroll-margin-top: 10px; /* height of fixed navbar */
-}
-
 /* Optional: animation delay helpers */
 .animation-delay-1000 {
   animation-delay: 1s;
@@ -22,4 +17,23 @@ section {
 }
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+/* Default for all sections */
+section {
+  scroll-margin-top: 70px; /* applies to all except overrides below */
+}
+
+/* Showcase section */
+#portfolio {
+  scroll-margin-top: 20px;
+}
+
+/* Contact section */
+#contact {
+  scroll-margin-top: 10px;
+}
+
+#about {
+  scroll-margin-top: 20px;
 }
