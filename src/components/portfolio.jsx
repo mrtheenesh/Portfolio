@@ -56,7 +56,7 @@ const projects = [
 ];
 // ========================================================================
 
-export default function Showcase() {
+export default function Portfolio() {
   useEffect(() => {
     AOS.init({
       duration: 400,
