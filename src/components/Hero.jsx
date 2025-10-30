@@ -28,8 +28,7 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-4xl sm:text-5xl md:text-6xl font-bold"
         >
-          Turning Ideas into{" "}
-          <span className="text-purple-400">Code</span>
+          Turning Ideas into <span className="text-purple-400">Code</span>
         </motion.h1>
 
         <motion.p
@@ -84,19 +83,21 @@ export default function Home() {
         </motion.div>
       </div>
 
-      {/* RIGHT SIDE - LOTTIE ANIMATION */}
+      {/* RIGHT SIDE - LOTTIE (Desktop Only) */}
       <motion.div
         initial={{ opacity: 0, x: 80 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
         className="flex-1 mt-10 md:mt-0 flex justify-center"
       >
-        <Lottie
-          lottieRef={lottieRef}
-          animationData={devAnimation}
-          loop={true}
-          className="w-40 sm:w-56 md:w-72 lg:w-80 mx-auto md:mx-0"
-        />
+        <div className="hidden md:block">
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={devAnimation}
+            loop={true}
+            className="w-40 sm:w-56 md:w-72 lg:w-80 mx-auto md:mx-0"
+          />
+        </div>
       </motion.div>
     </section>
   );

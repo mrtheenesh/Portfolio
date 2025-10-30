@@ -8,7 +8,6 @@ body {
   scroll-behavior: smooth !important;
 }
 
-/* Optional: animation delay helpers */
 .animation-delay-1000 {
   animation-delay: 1s;
 }
@@ -19,9 +18,8 @@ body {
   animation-delay: 4s;
 }
 
-/* Default for all sections */
-section {
-  scroll-margin-top: 70px; /* applies to all except overrides below */
+#home {
+  scroll-margin-top: 70px;
 }
 
 /* Showcase section */
@@ -29,11 +27,14 @@ section {
   scroll-margin-top: 20px;
 }
 
-/* Contact section */
 #contact {
   scroll-margin-top: 10px;
 }
 
 #about {
+  scroll-margin-top: 25px;
+}
+
+#skills {
   scroll-margin-top: 20px;
 }
