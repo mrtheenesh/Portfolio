@@ -6,16 +6,16 @@ import "aos/dist/aos.css";
 export default function About() {
   useEffect(() => {
     AOS.init({
-      duration: 600,  // speed of animation
-      once: false,    // allow replay when scrolling down again
-      mirror: false,  // no animation on scroll up
+      duration: 600,
+      once: false,
+      mirror: false,
     });
   }, []);
 
   return (
     <section
       id="about"
-      className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center md:text-left text-white"
+      className="scroll-mt-[25px] relative min-h-screen flex flex-col justify-center items-center px-6 py-16 text-white"
     >
       {/* Heading */}
       <h2
@@ -35,15 +35,15 @@ export default function About() {
       </p>
 
       {/* 2-column layout */}
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl w-full">
         {/* Left content */}
         <div className="space-y-6" data-aos="fade-up" data-aos-delay="250">
-          <h3 className="text-4xl font-bold">
+          <h3 className="text-4xl font-bold text-center md:text-left">
             Hi, I&apos;m{" "}
             <span className="text-purple-400">Theenesh M.R</span>
           </h3>
 
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed text-center md:text-left">
             I’m a{" "}
             <span className="font-semibold text-blue-400">
               B.Sc. Computer Science graduate (2022–2025)
@@ -57,7 +57,7 @@ export default function About() {
             projects.
           </p>
 
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed text-center md:text-left">
             Eager to grow in a professional environment and apply my problem-
             solving and teamwork skills to support the team and deliver results.
           </p>
@@ -84,9 +84,9 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right profile image */}
+        {/* Right profile image — hidden on mobile */}
         <div
-          className="flex justify-center"
+          className="hidden sm:flex justify-center"
           data-aos="fade-up"
           data-aos-delay="400"
         >

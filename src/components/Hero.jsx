@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 py-12 text-center md:text-left text-white"
+      className="flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 py-6 text-center md:text-left text-white"
     >
       {/* LEFT SIDE */}
       <div className="flex-1 space-y-6">
