@@ -20,18 +20,18 @@ export default function App() {
 
   return (
     <>
-      {/* Background */}
-        <Bg /> {/* background with -z-10 */}
-        <section className="relative z-10 text-white overflow-hidden">
-          <Navbar />
-          <Hero />
-          <About />
-          <Showcase />
-          <Skills />
-          <Contact />
-          <Footer />
-        </section>
-      </>
-
+      <div>
+        <Bg />
+      </div>
+      <section className="relative z-10 text-white">
+        <Navbar />
+        <Hero />
+        <About />
+        <Showcase />
+        <Skills />
+        <Contact />
+        <Footer />
+      </section>
+    </>
   );
 }

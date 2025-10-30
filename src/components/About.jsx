@@ -8,7 +8,7 @@ export default function About() {
     AOS.init({
       duration: 600,  // speed of animation
       once: false,    // allow replay when scrolling down again
-      mirror: false,  // 👈 important: no animation on scroll up
+      mirror: false,  // no animation on scroll up
     });
   }, []);
 
@@ -35,7 +35,7 @@ export default function About() {
       </p>
 
       {/* 2-column layout */}
-      <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl w-full">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Left content */}
         <div className="space-y-6" data-aos="fade-up" data-aos-delay="250">
           <h3 className="text-4xl font-bold">
@@ -51,19 +51,23 @@ export default function About() {
             seeking an entry-level role in IT as a Full Stack Developer. Skilled
             in{" "}
             <span className="italic">
-              Python, Django, HTML, CSS, Sql, JavaScript, and React
+              Python, Django, HTML, CSS, SQL, JavaScript, and React
             </span>
             , with hands-on experience through academic and self-learning
             projects.
           </p>
 
           <p className="text-gray-300 leading-relaxed">
-            Eager to grow in a professional environment and apply my problem
+            Eager to grow in a professional environment and apply my problem-
             solving and teamwork skills to support the team and deliver results.
           </p>
- 
+
           {/* Buttons */}
-          <div className="flex space-x-4 pt-4" data-aos="fade-up" data-aos-delay="350">
+          <div
+            className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4 justify-center md:justify-start"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
             <a
               href="/techstack/Theenesh_MR_Software_Developer_Resume.pdf"
               download="Theenesh_MR_Software_Developer_Resume.pdf"
@@ -92,7 +96,7 @@ export default function About() {
             <img
               src="/techstack/profile.jpg"
               alt="Profile Picture"
-              className="relative w-64 h-64 object-cover border-3 border-gray-800 shadow-xl rounded-2xl group-hover:shadow-[0_0_40px_rgba(255,255,255,0.8)] transition duration-500 group-hover:-translate-y-1"
+              className="relative w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 object-cover border-3 border-gray-800 shadow-xl rounded-2xl group-hover:shadow-[0_0_40px_rgba(255,255,255,0.8)] transition duration-500 group-hover:-translate-y-1"
             />
           </div>
         </div>
