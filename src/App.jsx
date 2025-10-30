@@ -12,26 +12,27 @@ import { useEffect } from "react";
 
 export default function App() {
   useEffect(() => {
-  AOS.init({
-    duration: 400,
-    once: false,
-  });
-}, []);
-return (
-  <>
-      <div>
-      <Bg />
-      </div>
-      <section className="relative z-10 text-white">
-      <Navbar />
-      <Hero />
-      <About />
-      <Showcase />
-      <Skills />
-      <Contact />
-      <Footer />
-      </section>
+    AOS.init({
+      duration: 400,
+      once: false,
+    });
+  }, []);
 
-  </>
-);
+  return (
+    <>
+      {/* Background */}
+      <Bg />
+
+      {/* Main Page Content */}
+      <section className="relative z-10 text-white overflow-hidden">
+        <Navbar />
+        <Hero />
+        <About />
+        <Showcase />
+        <Skills />
+        <Contact />
+        <Footer />
+      </section>
+    </>
+  );
 }

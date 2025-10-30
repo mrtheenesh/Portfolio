@@ -15,7 +15,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex flex-col justify-center items-center px-6 py-16 text-white"
+      className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center md:text-left text-white"
     >
       {/* Heading */}
       <h2

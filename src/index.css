@@ -3,12 +3,17 @@
 @tailwind utilities;
 
 html,
-html,
 body {
   overflow-x: hidden;
   scroll-behavior: smooth !important;
 }
 
+/* Fix cutoff when scrolling to anchors (like #about, #skills) */
+section {
+  scroll-margin-top: 80px; /* height of fixed navbar */
+}
+
+/* Optional: animation delay helpers */
 .animation-delay-1000 {
   animation-delay: 1s;
 }

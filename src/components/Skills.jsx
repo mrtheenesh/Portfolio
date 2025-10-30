@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -24,7 +25,6 @@ export default function Skills() {
     });
   }, []);
 
-  // Optional: re-run AOS on tab switch (like your example)
   const handleTabChange = () => {
     setTimeout(() => {
       AOS.refresh();
@@ -34,38 +34,36 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen flex flex-col justify-center items-center px-6 py-16 transition-colors"
+      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-white transition-colors"
     >
+      {/* Heading */}
       <h2
         data-aos="fade-up"
-        className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-10"
+        className="text-3xl md:text-4xl font-bold mb-10 text-center"
       >
-        Skills
+        ⚙️ Skills
       </h2>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl w-full">
-
+      {/* Grid of Skill Cards */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
         {skills.map((skill, index) => (
           <div
             key={skill.name}
             data-aos="fade-up"
-            data-aos-delay={index * 100} // stagger animation
+            data-aos-delay={index * 100}
             className="relative group cursor-pointer"
           >
-            {/* Neon Glow - only visible on hover */}
-            <div
-              className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400
-                        opacity-0 group-hover:opacity-40 blur-xl transition duration-500"
-            ></div>
+            {/* Neon Glow on hover */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 opacity-0 group-hover:opacity-40 blur-xl transition duration-500"></div>
 
-            {/* Card Content */}
+            {/* Skill Card */}
             <div className="relative p-6 bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-md transition transform hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-800/50">
-              <div className="flex items-center space-x-3 mb-4 text-blue-600 dark:text-blue-400">
+              <div className="flex items-center justify-center space-x-3 mb-4 text-blue-600 dark:text-blue-400">
                 {skill.icon}
                 <h3 className="text-lg font-semibold">{skill.name}</h3>
               </div>
 
-              {/* Progress bar (static, no animation on refresh) */}
+              {/* Progress Bar */}
               <div className="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3">
                 <div
                   className="bg-blue-600 dark:bg-blue-400 h-3 rounded-full"
