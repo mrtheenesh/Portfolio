@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "Home", id: "home" },
@@ -13,7 +13,7 @@ export default function Navbar() {
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Scroll Spy (track which section is visible)
+  // Scroll Spy
   useEffect(() => {
     const sections = navLinks
       .map((link) => document.getElementById(link.id))
@@ -51,7 +51,7 @@ export default function Navbar() {
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50 backdrop-blur-md bg-opacity-80"
+      className="fixed top-0 left-0 w-full bg-gray-900/80 text-white shadow-lg z-50 backdrop-blur-md"
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Left side - Logo / Name */}
@@ -87,7 +87,7 @@ export default function Navbar() {
             >
               <button
                 onClick={() => handleScroll(link.id)}
-                className={`transition ${
+                className={`transition font-medium ${
                   active === link.id ? "text-blue-400" : "hover:text-blue-400"
                 }`}
               >
@@ -102,14 +102,16 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Hamburger Icon */}
+        {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white transition-transform duration-300 hover:scale-110"
+          >
             {menuOpen ? (
-              // X icon when open
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-7 w-7"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -122,10 +124,9 @@ export default function Navbar() {
                 />
               </svg>
             ) : (
-              // Hamburger icon when closed
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-7 w-7"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -142,30 +143,43 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
-      {menuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="absolute top-16 left-0 w-full bg-gray-900 text-center flex flex-col space-y-4 py-6 md:hidden shadow-lg"
-        >
-          {navLinks.map((link, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                handleScroll(link.id);
-                setMenuOpen(false);
-              }}
-              className={`transition ${
-                active === link.id ? "text-blue-400" : "hover:text-blue-400"
-              }`}
-            >
-              {link.name}
-            </button>
-          ))}
-        </motion.div>
-      )}
+      {/* ✨ Mobile Dropdown Menu ✨ */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="absolute top-16 left-0 w-full bg-black/70 backdrop-blur-xl border-t border-purple-500/30 shadow-lg md:hidden"
+          >
+            <ul className="flex flex-col items-center space-y-6 py-8 text-lg font-medium">
+              {navLinks.map((link, i) => (
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * i }}
+                >
+                  <button
+                    onClick={() => {
+                      handleScroll(link.id);
+                      setMenuOpen(false);
+                    }}
+                    className={`px-4 py-2 rounded-md transition-all duration-300 hover:scale-105 ${
+                      active === link.id
+                        ? "text-purple-400"
+                        : "text-white hover:text-purple-400"
+                    }`}
+                  >
+                    {link.name}
+                  </button>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }
