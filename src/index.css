@@ -23,3 +23,7 @@ section {
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+.no-scroll-offset {
+  scroll-margin-top: 0 !important;
+}

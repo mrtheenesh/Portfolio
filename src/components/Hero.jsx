@@ -84,20 +84,27 @@ export default function Home() {
         </motion.div>
       </div>
 
-      {/* RIGHT SIDE - LOTTIE ANIMATION */}
-      <motion.div
-        initial={{ opacity: 0, x: 80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="flex-1 mt-10 md:mt-0 flex justify-center"
-      >
-        <Lottie
-          lottieRef={lottieRef}
-          animationData={devAnimation}
-          loop={true}
-          className="w-40 sm:w-56 md:w-72 lg:w-80 mx-auto md:mx-0"
-        />
-      </motion.div>
+        {/* RIGHT SIDE - LOTTIE ANIMATION */}
+        <div className="hidden md:block">
+          <Lottie animationData={animationData} loop autoplay />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="flex-1 mt-10 md:mt-0 flex justify-center"
+        >
+          <div className="hidden md:block">
+            <Lottie
+              lottieRef={lottieRef}
+              animationData={devAnimation}
+              loop={true}
+              className="w-40 sm:w-56 md:w-72 lg:w-80 mx-auto md:mx-0"
+            />
+          </div>
+        </motion.div>
+
     </section>
   );
 }

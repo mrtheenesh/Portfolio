@@ -80,11 +80,12 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      ref={sectionRef}
-      className="relative min-h-screen flex flex-col justify-center items-center px-6 py-16 transition-colors"
-    >
+      <section
+        id="contact"
+        ref={sectionRef}
+        className="relative min-h-screen flex flex-col justify-center items-center px-6 py-16 transition-colors no-scroll-offset"
+      >
+
       {/* Title */}
       <motion.h2
         initial="hidden"
