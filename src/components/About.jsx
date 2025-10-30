@@ -61,7 +61,7 @@ export default function About() {
             Eager to grow in a professional environment and apply my problem
             solving and teamwork skills to support the team and deliver results.
           </p>
-
+ 
           {/* Buttons */}
           <div className="flex space-x-4 pt-4" data-aos="fade-up" data-aos-delay="350">
             <a
