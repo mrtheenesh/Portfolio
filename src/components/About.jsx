@@ -65,8 +65,8 @@ export default function About() {
           {/* Buttons */}
           <div className="flex space-x-4 pt-4" data-aos="fade-up" data-aos-delay="350">
             <a
-              href="Theenesh_MR_Software_Developer_Resume"
-              download="Theenesh_MR_Software_Developer_Resume"
+              href="/techstack/Theenesh_MR_Software_Developer_Resume.pdf"
+              download="Theenesh_MR_Software_Developer_Resume.pdf"
               className="px-6 py-3 border border-purple-400 text-purple-400 hover:bg-purple-600/20 rounded-lg font-medium transition"
             >
               📄 Download Resume
