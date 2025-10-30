@@ -148,14 +148,35 @@ export default function Contact() {
       </motion.form>
 
       {/* Social Links */}
-      <motion.div initial="hidden" animate={controls} variants={slideUp} custom={5} className="flex gap-6 mt-8">
-        <a href="mailto:mrtheenesh07@gmail.com" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500">
+      <motion.div 
+        initial="hidden" 
+        animate={controls} 
+        variants={slideUp} 
+        custom={5} 
+        className="flex gap-6 mt-8"
+      >
+        <a 
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=mrtheenesh07@gmail.com" 
+          target="_blank" 
+          rel="noreferrer" 
+          className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500"
+        >
           <Mail className="w-6 h-6 mr-2" /> Email
         </a>
-        <a href="https://github.com/mrtheenesh" target="_blank" rel="noreferrer" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500">
+        <a 
+          href="https://github.com/mrtheenesh" 
+          target="_blank" 
+          rel="noreferrer" 
+          className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500"
+        >
           <Github className="w-6 h-6 mr-2" /> GitHub
         </a>
-        <a href="https://www.linkedin.com/in/theenesh-mr" target="_blank" rel="noreferrer" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500">
+        <a 
+          href="https://www.linkedin.com/in/theenesh-mr" 
+          target="_blank" 
+          rel="noreferrer" 
+          className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500"
+        >
           <Linkedin className="w-6 h-6 mr-2" /> LinkedIn
         </a>
       </motion.div>

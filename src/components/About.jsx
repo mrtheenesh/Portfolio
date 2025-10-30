@@ -51,7 +51,7 @@ export default function About() {
             seeking an entry-level role in IT as a Full Stack Developer. Skilled
             in{" "}
             <span className="italic">
-              Python, Django, HTML, CSS,Sql, JavaScript, and React
+              Python, Django, HTML, CSS, Sql, JavaScript, and React
             </span>
             , with hands-on experience through academic and self-learning
             projects.
